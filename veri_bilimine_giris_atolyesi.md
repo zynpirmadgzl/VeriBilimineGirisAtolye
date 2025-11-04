@@ -616,7 +616,7 @@ print(max(sayilar)) # 89
 def fibonacci(n):
     seri = [0, 1]
     for i in range(2, n):
-        sonraki = seri[i-1] + seri[i-2]
+        sonraki = seri[i-1] + seri[i-2]s
         seri.append(sonraki)
     return seri
 
@@ -629,6 +629,7 @@ print(fibonacci(10))
 Bu alıştırmaları çözerek öğrendiklerinizi pekiştirin:
 
 - **Alıştırma 1: Tek mi Çift mi?** Kullanıcıdan bir sayı alın ve bu sayının tek mi çift mi olduğunu ekrana yazdıran bir program yazın.
+
 
 - **Alıştırma 2: Faktöriyel Hesaplama** Bir sayının faktöriyelini hesaplayan bir fonksiyon yazın. (Örnek: 5! = 5 × 4 × 3 × 2 × 1 = 120)
 
