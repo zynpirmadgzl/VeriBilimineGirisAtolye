@@ -1,4 +1,5 @@
 import numpy as np
+
 #1)	0 ile 9 arasındaki tam sayıları içeren tek boyutlu bir NumPy dizisi (array) oluşturun.
 list=np.arange(9)
 print(list)
@@ -84,4 +85,39 @@ Z = np.array([[4, 7], [2, 6]])
 #Matrisin determinantını hesaplayın.
 print(np.linalg.det(Z))
 #Matrisin tersini (inverse) hesaplayın ve ters matris ile orijinal matrisi çarparak birim matris (Identity Matrix) elde edip etmediğinizi kontrol edin.
+Z_inv=np.linalg.inv(Z)
+print(Z_inv)
 
+result=Z_inv.dot(Z)
+print(result)
+print(np.allclose(result,np.eye(2)))
+
+#veri = np.array([1, 2, 1, 4, 5, 2, 7, 1]) dizisindeki benzersiz elemanları ve her bir elemanın kaç kez tekrarlandığını bulun.
+veri = np.array([1, 2, 1, 4, 5, 2, 7, 1])
+unique_values, counts=np.unique(veri,return_counts=True)
+print(f"{unique_values} , {counts}")
+
+#dizi = np.random.randn(100) (Normal dağılımdan 100 rastgele sayı) dizisini oluşturun.
+dizi = np.random.randn(100)
+print(dizi)
+#Dizideki tüm değerleri -2 ve 2 aralığına kırpın (clip). Yani, -2'den küçük olanları -2 yapın, 2'den büyük olanları 2 yapın.
+dizi[dizi<-2]=-2
+dizi[dizi>2]=2
+print(f"\n\n{dizi}")
+#v1 = np.array([1, 2, 3]) ve v2 = np.array([4, 5, 6]) vektörlerini oluşturun.
+v1 = np.array([1, 2, 3])
+v2 = np.array([4, 5, 6])
+#Bu iki vektörün nokta ürününü (inner product) ve dış ürününü (outer product) hesaplayın.
+inner=np.inner(v1,v2)
+outer=np.outer(v1,v2)
+print(inner)
+print(f"\n\n{ outer}")
+#1.000.000 elemanlı büyük bir listeyi (py_list) ve aynı elemanları içeren bir NumPy dizisini (np_array) oluşturun.
+py_list=[]
+
+for i in range(0,1000000):
+    py_list.append(i)
+print(py_list)
+
+np_array=np.arange(1000000)
+print(np_array)
